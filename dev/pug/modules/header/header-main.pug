@@ -1,0 +1,21 @@
+.header__main
+    .container
+        .header__content
+            .header__logo.logo
+                    img(src="static/images/content/logo.svg", alt="baby-toys").logo__img
+            .header__phones
+                .header__item
+                    a(href="tel:+74951203034").header__phone 8 (495) 120-30-34
+                    a(href="#").header__link Заказать звонок
+                    a(href="tel:+74951203034").header__phone 8 (800) 707-75-18
+                    span.header__description Звонок бесплатный
+            .header__adress.header-adress
+                +icon('location','header-adress__icon')
+                span.header-adress__text г. Москва, ул. Строителей, 25
+            .header__shop
+                .header-goods
+                    span.header-goods__price 0 &#8381;
+                    span.header-goods__count 0 товаров
+            .header-busket
+                +icon('busket','header-busket__icon')
+                span.header-busket__text Корзина
