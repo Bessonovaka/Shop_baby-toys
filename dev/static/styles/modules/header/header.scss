@@ -1,6 +1,6 @@
 header { flex: 0 0 auto; }
 .header {
-    
+    border-bottom: 1px solid $athens-gray;
     &__nav {
         &-right {
             margin-left: auto;
@@ -62,6 +62,9 @@ header { flex: 0 0 auto; }
         display: block;
         color: $silver-chalice;
     }
+    &__search {
+        margin-left: auto;
+    }
     &-adress {
         display: flex;
         flex: 0 0 190px;
@@ -98,6 +101,7 @@ header { flex: 0 0 auto; }
         }
     }
     &-busket {
+        cursor: pointer;
         align-items: center;
         border-radius: 20px;
         background-color: $wild-sand;
