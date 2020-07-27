@@ -1,8 +1,75 @@
 .search {
+    position: relative;
+    &.search--open {
+        .search__body {
+            display: block;
+        }
+    }
     &__icon {
         height: 20px;
         width: 20px;
         cursor: pointer;
         fill: $blaze-orange;
     }
+    &__body {
+        background-color: #fff;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.21), 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+        display: none;
+        padding: 20px;
+        position: absolute;
+        right: 0;
+        top: -35px;
+        width: 550px;
+    }
+    &__form {
+        align-items: center;
+        display: flex;
+    }
+    &__input {
+        background: transparent;
+        border: 1px solid $alto;
+        border-right: 0;
+        border-radius: 2px 0 0 2px;
+        color: $tundora;
+        padding: 0 50px 0 20px;
+        line-height: 48px;
+        height: 50px;
+        width: 100%;
+        &::placeholder {
+            color: $placeholder-color;
+        }
+        &-wrapper {
+            flex: 1;
+            position: relative;
+        }
+    }
+    &__clear {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+        z-index: 1;
+        &-icon {
+            fill: rgba(75, 75, 75, 0.5);
+            height: 16px;
+            width: 16px;
+        }
+    }  
+    &__btn {
+        background-color: $blaze-orange;
+        border: 0;
+        border-radius: 0 4px 4px 0;
+        color: $white;
+        cursor: pointer;
+        flex: 0 0 auto;
+        font-weight: 700;
+        height: 50px;
+        padding: 0 15px;
+
+    }  
 }

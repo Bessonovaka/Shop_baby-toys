@@ -20,6 +20,21 @@ $(document).ready(function () {
         )
     };
 
+    let openSearchForm = () => {
+        $(document).on('click','.search__icon',function () {
+            $(this).parent().addClass('search--open');
+        });
+    };
+
+    let clearSearchForm = () => {
+        $(document).on('click', '.search__clear', function () {
+            $('.search__input').val('');
+        });
+
+    };
+
     mainSubnavHover();
+    openSearchForm();
+    clearSearchForm();
 
 });
