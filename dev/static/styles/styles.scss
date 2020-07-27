@@ -57,7 +57,10 @@ textarea { vertical-align: middle; }
 
 textarea { resize: none; }
 
-section { position: relative; }
+section {
+  position: relative;
+  padding-bottom: 30px;
+}
 
 input,
 select,
