@@ -1,6 +1,44 @@
 .logo {
     &__img {
         height: 22px;
-        
     }
+}
+
+.advantages {
+    align-items: center;
+    background-color: $parcelain;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.advantage {
+    align-items: center;
+    display: flex;
+    margin-right: 180px;
+    &:last-child {
+        margin-right: 0;
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    &__descr {
+        color: $mid-gray;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    &__icon {
+        height: 50px;
+        width: 50px;
+        fill: $dusty-gray;
+        margin-right: 20px;
+    }
+}
+.s-light-bg {
+    background-color: $parcelain;
 }

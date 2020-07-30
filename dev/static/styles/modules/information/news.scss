@@ -1,0 +1,25 @@
+.news-prev {
+    align-items: flex-start;
+    color: $main-shaft;
+    display: flex;
+    margin-bottom: 40px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &__img {
+        background-size: cover;
+        border-radius: 4px;
+        flex-shrink: 0;
+        height: 80px;
+        margin-right: 20px;
+        width: 80px;
+    }
+    &__title {
+        display: block;
+        margin-bottom: 10px;
+    }
+    &__data {
+        color: $oslo-gray;
+        font-size: 12px;
+    }
+}
