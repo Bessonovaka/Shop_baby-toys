@@ -2,7 +2,7 @@
     margin: 30px 15px 30px;
     outline: none;
     padding: 20px;
-    padding-top: 390px;
+    padding-top: 190px;
     position: relative;
     transition: all linear .3s;
     &:hover {
@@ -17,7 +17,11 @@
     }
     &__img {
         max-width: 100%;
-        outline: none;
+        max-height: 160px;
+        margin: 0 auto;
+        &-wrapper {
+            outline: none;
+        }
     }
     &__info {
         display: flex;

@@ -1,6 +1,10 @@
+@import "mobile";
 header { flex: 0 0 auto; }
 .header {
     border-bottom: 1px solid $athens-gray;
+    @media screen and (max-width: $tablet) {
+        border-bottom: 0;
+    }
     &__nav {
         &-right {
             margin-left: auto;
@@ -13,7 +17,9 @@ header { flex: 0 0 auto; }
     &__top {
         padding: 10px 0;
         background-color: $athens-gray;
-        
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
     }
     &__main {
         padding: 25px 0;
@@ -65,10 +71,30 @@ header { flex: 0 0 auto; }
     &__search {
         margin-left: auto;
     }
+    &__menu {
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+    }
+    &__item {
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+        &.header__item {
+            &--mobile {
+                @media screen and (max-width: $tablet) {
+                    display: block;
+                }
+            }
+        } 
+    }
     &-adress {
         display: flex;
         flex: 0 0 190px;
         width: 190px;
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
         &__icon {
             flex: 0 0 15px;
             fill: $silver-chalice;

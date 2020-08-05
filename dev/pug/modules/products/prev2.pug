@@ -1,8 +1,10 @@
 .product-prev
     .product-prev__header
         .js-product-prev__slider
-            img(src="static/images/content/products/product-2.jpg", alt="Изображение товара" data-color="#000000").product-prev__img
-            img(src="static/images/content/products/product-2.jpg", alt="Изображение товара" data-color="#ffffff").product-prev__img
+            .product-prev__img-wrapper(data-color="#000000")
+                img(src="static/images/content/products/product-2.jpg", alt="Изображение товара").product-prev__img
+            .product-prev__img-wrapper(data-color="#ffffff")
+                img(src="static/images/content/products/product-2.jpg", alt="Изображение товара").product-prev__img
     .product-prev__body
         .product-prev__info
             span.product-prev__title Самокат Smyley Mini (красный)

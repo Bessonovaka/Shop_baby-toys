@@ -1,24 +1,24 @@
 $(document).ready(function () {
-    svg4everybody({});
+  svg4everybody({});
 
-    let mainSubnavHover = function () {
-        $('.main-subnav__item').hover(
-            function () {
-                let parentList = $(this).closest('.main-subnav__list');
-                if ($(this).children('.main-subnav__list').length) {
-                    let catNavHeight = $(this).children('.main-subnav__list').outerHeight();
-                    if (parentList.outerHeight() < catNavHeight) {
-                        parentList.css('height', catNavHeight);
-                    }
-                    parentList.css('width', '720');
-                }
-            }, function () {
-                let parentList = $(this).closest('.main-subnav__list');
+  let catalogNavHover = function () {
+    $('.catalog-nav__item').hover(
+      function () {
+        let parentList = $(this).closest('.catalog-nav__list');
+        if ($(this).children('.catalog-nav__list').length) {
+          let catNavHeight = $(this).children('.catalog-nav__list').outerHeight();
+            if (parentList.outerHeight() < catNavHeight) {
+                parentList.css('height', catNavHeight);
+              }
+                parentList.css('width', '720');
+          }
+      }, function () {
+            let parentList = $(this).closest('.catalog-nav__list');
                 parentList.css('height', 'auto');
                 parentList.css('width', 'auto');
             }
         )
-    };
+  };
 
     let openSearchForm = function () {
         $(document).on('click','.search__icon',function () {
@@ -40,10 +40,10 @@ $(document).ready(function () {
             dots: true,
             prevArrow: ".banner__navigation--prev",
             nextArrow: ".banner__navigation--next",
+            appendDots: '.banner__dots',
             customPaging : function(slider, i) {
-                return '<a class="banner__dot"></a>';
-            },
-            appendDots: '.banner__dots'
+                return '<div class="banner__dot"></div>';
+            }
         })
     };
 
@@ -67,14 +67,16 @@ $(document).ready(function () {
 
     let productPrevSlider = function () {
         $('.js-product-prev__slider').each(function (idx) {
-            let carouselId = "carousel" + idx;
-            this.closest('.product-prev').id = carouselId;
+            let productPrevSliderClass = "product-prev-slider-" + idx;
+            this.closest('.product-prev').classList.add(productPrevSliderClass);
             $(this).slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 dots: true,
                 arrows: false,
-                appendDots: '#' + carouselId + ' .product-prev__colors',
+                appendDots: '.' + productPrevSliderClass + ' .product-prev__colors',
+                swipe: false,
+                infinite: false,
                 customPaging : function(slider, i) {
                     let color = $(slider.$slides[i]).data('color');
                     return '<a class="product-prev__color" style="background-color:' + color + '"></a>'
@@ -84,18 +86,48 @@ $(document).ready(function () {
     };
 
     let productLineSlider = function () {
-        $('.js-products-line-slider').slick({
-            slidesToShow: 4,
-            slidesToScroll: 1
-        })
+        $('.js-products-line-slider').each(function (idx) {
+            let productsLineSliderId = "products-line-slider-" + idx;
+            this.closest('.products-line-slider').id = productsLineSliderId;
+            $(this).slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite: false,
+                dots: true,
+                appendDots: '#' + productsLineSliderId + ' .products-line-slider__dots',
+                prevArrow: '#' + productsLineSliderId + ' .products-line-slider__btn--prev',
+                nextArrow: '#' + productsLineSliderId + ' .products-line-slider__btn--next',
+                responsive: [
+                    {
+                        breakpoint: 1139,
+                        settings: {
+                            slidesToShow: 3,
+                            customPaging : function(slider, i) {
+                                return '<div class="products-line-slider__dot"></div>';
+                            },
+                        }
+                    }
+                ]
+            });
+        });
     };
 
-    mainSubnavHover();
+    let mobileMenu = function () {
+        $(document).on('click','.mobile-menu__toogle', function () {
+            $(this).parent().addClass('mobile-menu--open')
+        });
+        $(document).on('click','.mobile-menu__close', function () {
+            $(this).closest('.mobile-menu').removeClass('mobile-menu--open')
+        });
+    };
+
+    catalogNavHover();
     openSearchForm();
     clearSearchForm();
     bannerSlider();
     tabs();
     productPrevSlider();
     productLineSlider();
+    mobileMenu();
 
 });

@@ -4,9 +4,16 @@
 
 .information {
     display: flex;
+    @media screen and (max-width: $tablet) {
+        flex-wrap: wrap;
+    }
     & > * {
         flex: 1;
         padding-right: 30px;
+        @media screen and (max-width: $tablet) {
+            flex: 0 0 50%;
+            width: 50%;
+        }
         &:last-child {
             padding-right: 0;
         }
@@ -31,6 +38,20 @@
         }
         &__count {
             color: $chelsea-cucumber;
+        }
+        &.information-item--wide {
+            @media screen and (max-width: $tablet) {
+                flex: 1;
+                margin-top: 40px;
+                width: 100%;
+            }
+            .information-item {
+                &__body {
+                    @media screen and (max-width: $tablet) {
+                        height: 150px;
+                    }
+                }
+            }
         }
     }
 }

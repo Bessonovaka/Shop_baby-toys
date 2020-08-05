@@ -7,12 +7,21 @@ footer { flex: 0 0 auto; }
         .container {
             align-items: flex-start;
             display: flex;
+            @media screen and (max-width: $tablet) {
+                flex-wrap: wrap;
+            }
         }
     }
     &__item {
         display: flex;
         flex-direction: column;
         margin-right: 130px;
+        max-width: 215px;
+        @media screen and (max-width: $tablet) {
+            flex: 0 0 226px;
+            width: 226px;
+            margin-right: 0;
+        }
         &:last-child {margin-right: 0;}
         & > * {
             margin: 15px 0;
@@ -22,32 +31,60 @@ footer { flex: 0 0 auto; }
     }
     &__socials {
         padding-bottom: 30px;
-    }
-    &__bottom {
-        background-color: rgba(0, 0, 0, 0.05);
-        padding: 20px 0;
         .container {
             align-items: center;
             display: flex;
             justify-content: space-between;
         }
+        .yandex-market {
+            @media screen and (max-width: $tablet) {
+                display: none;
+            }
+        }
+    }
+    &__bottom {
+        background-color: rgba(0, 0, 0, 0.05);
+        padding: 20px 0;
+        .container {
+            align-items: flex-start;
+            display: flex;
+            @media screen and (max-width: $tablet) {
+                font-size: 12px;
+                line-height: 1.67;
+            }
+            & > * {
+                flex: 0 0 45%;
+                width: 45%;
+            }
+        }
     }
     &__personal-data {
         color: $oslo-gray;
     }
-    &__socials {
-        .container {
-            align-items: center;
-            display: flex;
-        }
-    }
     &__contacts {
         margin-left: auto;
         text-align: right;
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+        &-mobile {
+            display: none;
+            justify-content: space-between;
+            width: 100%;
+            @media screen and (max-width: $tablet) {
+                display: flex;
+            }
+        }
     }
     &__navigation {
         align-items: flex-start;
         display: flex;
+        @media screen and (max-width: $tablet) {
+            justify-content: space-between;
+            flex: 1;
+            margin-bottom: 30px;
+            width: 100%;
+        }
     }
     &__phones {
         display: flex;
@@ -86,8 +123,11 @@ footer { flex: 0 0 auto; }
 .socials {
     align-items: center;
     display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+    width: 100%;
     &__item {
-        margin-right: 50px;
+        margin-right: 40px;
         &:last-child {margin-right: 0;}
     }
     &__link {
@@ -105,9 +145,20 @@ footer { flex: 0 0 auto; }
 .yandex-market {
     align-items: center;
     display: flex;
-    margin-left: auto;
+    justify-content: space-between;
+    width: 34%;
+    @media screen and (max-width: $tablet) {
+        align-items: flex-start;
+        margin-left: 0;
+        flex-direction: column;
+        width: auto;
+    }
     & > * {
         margin-right: 20px;
+        @media screen and (max-width: $tablet) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
         &:last-child {
             margin-right: 0;
         }

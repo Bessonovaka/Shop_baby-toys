@@ -1,0 +1,54 @@
+.products-line-slider {
+    &__navigation {
+        align-items: center;
+        display: none;
+        justify-content: space-between;
+        @media screen and (max-width: $tablet) {
+            display: flex;
+        }
+    }
+    &__btn {
+        align-items: center;
+        border: 1px solid $alto;
+        border-radius: 2px;
+        display: flex;
+        justify-content: space-between;
+        height: 40px;
+        width: 40px;
+    }
+    &__icon {
+        height: 15px;
+        fill: $blaze-orange;
+        width: 15px;
+    }
+    &__dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: $alto;
+        cursor: pointer;
+        display: block;
+    }
+    &__dots {
+        bottom: 20px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        z-index: 2;
+        .slick-dots {
+            align-items: center;
+            display: flex;
+            li {
+                margin-right: 10px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &.slick-active {
+                    .products-line-slider__dot {
+                        background-color: $blaze-orange;
+                    }
+                }
+            }
+        }
+    }
+}

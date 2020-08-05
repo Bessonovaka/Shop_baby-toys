@@ -50,10 +50,11 @@
         width: 12px;
     }
 }
-.main-subnav {
+.catalog-nav {
     &__list {
+        background-color: $white;
         position: relative;
-        .main-subnav__list {
+        .catalog-nav__list {
             display: none;
             position: absolute;
             top: 0;
@@ -62,15 +63,18 @@
     }
     &__item {
         width: 360px;
+        @media screen and (max-width: $tablet) {
+            width: auto;
+        }
         &:hover {
-            & > .main-subnav__link {
+            & > .catalog-nav__link {
                 background-color: $athens-gray;
                 color: $blaze-orange;
             }
-            .main-subnav__icon {
+            .catalog-nav__icon {
                 fill: $blaze-orange;
             }
-            .main-subnav__list {
+            .catalog-nav__list {
                 display: block;
             }
         }
@@ -85,7 +89,7 @@
         &:hover {
             background-color: $athens-gray;
             color: $blaze-orange;
-            .main-subnav__icon {
+            .catalog-nav__icon {
                 fill: $blaze-orange;
             }
         }
