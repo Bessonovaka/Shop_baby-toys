@@ -3,10 +3,13 @@
         .mobile-menu {
             &__content {
                 display: block;
+                @media screen and (max-width: $phone) {
+                    left: 0;
+                }
             }
         }
     }
-    &__toogle {
+    &__toggle {
         align-items: center;
         background-color: $blaze-orange;
         color: $white;
@@ -14,8 +17,28 @@
         display: flex;
         justify-content: center;
         height: 50px;
+        @media screen and (max-width: $phone) {
+            background-color: $white;
+            border-right: 1px solid rgba(75, 75, 75, 0.2);
+            height: 50px;
+            margin-right: 30px;
+            width: 50px;
+            .sandwich {
+                &__line {
+                    background-color: $tundora;
+                }
+            }
+            .mobile-menu {
+                &__title {
+                    display: none;
+                }
+            }
+        }
         & > * {
             margin-right: 20px;
+            @media screen and (max-width: $phone) {
+                margin-right: 0;
+            }
             &:last-child {margin-right: 0;}
         }
     }
@@ -29,8 +52,19 @@
         left: 15px;
         position: absolute;
         right: 15px;
+        transition: all linear .5s;
         top: 0;
         z-index: 5;
+        @media screen and (max-width: $phone) {
+            bottom: 0;
+            box-shadow: none;
+            display: block;
+            left: -100%;
+            overflow: auto;
+            position: fixed;
+            right: auto;
+            width: 100%;
+        }
     }
     &__header {
         align-items: center;

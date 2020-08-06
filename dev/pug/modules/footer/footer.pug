@@ -23,7 +23,7 @@ footer.footer
                         +footerNavLink('#', 'Поставщикам')
                         +footerNavLink('#', 'Новости')
                         +footerNavLink('#', 'Отзывы')
-                .footer__item
+                .footer__item.footer__item--wide
                     ul.footer-nav
                         +footerNavLink('#', 'Контакты')
                         +footerNavLink('#', 'Вопросы и ответы')
@@ -39,10 +39,10 @@ footer.footer
                 .footer__item
                     a(href="tel:+").footer__phone 8 (800) 707-75-18                   
                     span.footer__text Звонок бесплатный
-                .footer__item
+                .footer__item.footer__item--text-right
                     span.footer__text +7 (495) 120-30-34
                     a(href="mailto:sale@baby-toys.ru").footer__mail sale@baby-toys.ru
-                .footer__item
+                .footer__item.footer__item--full
                     .yandex-market
                         img(src="static/images/content/socials/yandex.svg", alt="Яндекс-маркет")
                         a(href="#").btn.btn--small.btn--transparent-gray.btn--inline Оставить отзыв

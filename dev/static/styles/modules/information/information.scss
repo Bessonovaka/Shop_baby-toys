@@ -7,12 +7,19 @@
     @media screen and (max-width: $tablet) {
         flex-wrap: wrap;
     }
+    @media screen and (max-width: $phone) {
+        flex-direction: column;
+    }
     & > * {
         flex: 1;
         padding-right: 30px;
         @media screen and (max-width: $tablet) {
             flex: 0 0 50%;
             width: 50%;
+        }
+        @media screen and (max-width: $phone) {
+            flex: 1;
+            width: 100%;
         }
         &:last-child {
             padding-right: 0;
@@ -21,6 +28,10 @@
     &-item {
         &__body {
             height: 250px;
+            @media screen and (max-width: $phone) {
+                height: auto;
+                margin-bottom: 20px;
+            }
         }
         &__footer {
             display: flex;
@@ -49,6 +60,10 @@
                 &__body {
                     @media screen and (max-width: $tablet) {
                         height: 150px;
+                    }
+                    @media screen and (max-width: $phone) {
+                        height: auto;
+                        margin-bottom: 20px;
                     }
                 }
             }

@@ -32,12 +32,14 @@ section.s-information.s-light-bg
                     h2.title-section Бренды
                 .information-item__body
                     .brands__wrapper
-                        ul.brands__list.brands__list--small
-                            each brand in [{img:'micro', name:'Micro'},{img:'puky', name:'PUKY'},{img:'hudora', name:'Hudora'},{img:'globber', name:'Globber'},{img:'kokua', name:'KOKUA'},{img:'stiga', name:'STIGA'}]
-                                li.brands__item
-                                    a(href="#").brand
-                                        img(src=`static/images/content/brands/${brand.img}.jpg`, alt="brand").brand__img
-                                        span.brand__name=brand.name
+                        .mobile-scroll-wrapper
+                            .mobile-scroll-inner
+                                ul.brands__list.brands__list--small
+                                    each brand in [{img:'micro', name:'Micro'},{img:'puky', name:'PUKY'},{img:'hudora', name:'Hudora'},{img:'globber', name:'Globber'},{img:'kokua', name:'KOKUA'},{img:'stiga', name:'STIGA'}]
+                                        li.brands__item
+                                            a(href="#").brand
+                                                img(src=`static/images/content/brands/${brand.img}.jpg`, alt="brand").brand__img
+                                                span.brand__name=brand.name
                 .information-item__footer
                     a(href="#").information-item__link Все бренды
                     span.information-item__count (9)

@@ -43,6 +43,7 @@
         &--inline {
             display: inline-block;
             width: auto;
+            white-space: nowrap;
         }
         &--small {
             height: 30px;

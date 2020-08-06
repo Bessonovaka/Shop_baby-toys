@@ -6,13 +6,40 @@
         @media screen and (max-width: $tablet) {
             display: block;
         }
+        @media screen and (max-width: $phone) {
+            margin-bottom: 0;
+        }
         .container {
             display: flex;
             justify-content: space-between;
+            @media screen and (max-width: $phone) {
+                align-items: center;
+                justify-content: flex-start;
+                padding-left: 0;
+            }
             & > * {
                 flex: 0 0 48%;
                 width: 48%;
+                @media screen and (max-width: $phone) {
+                    flex: 0 0 auto;
+                    width: auto;
+                }
             }
+        }
+        .search {
+            @media screen and (max-width: $phone) {
+                display: none;
+            }
+        }
+        
+    }
+}
+.mobile {
+    &__logo {
+        display: none;
+        @media screen and (max-width: $phone) {
+            display: block;
+            height: 16px;
         }
     }
 }

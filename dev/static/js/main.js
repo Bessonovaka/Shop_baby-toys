@@ -43,7 +43,15 @@ $(document).ready(function () {
             appendDots: '.banner__dots',
             customPaging : function(slider, i) {
                 return '<div class="banner__dot"></div>';
-            }
+            },
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                    }
+                }
+            ]
         })
     };
 
@@ -97,14 +105,24 @@ $(document).ready(function () {
                 appendDots: '#' + productsLineSliderId + ' .products-line-slider__dots',
                 prevArrow: '#' + productsLineSliderId + ' .products-line-slider__btn--prev',
                 nextArrow: '#' + productsLineSliderId + ' .products-line-slider__btn--next',
+                customPaging : function(slider, i) {
+                    return '<div class="products-line-slider__dot"></div>';
+                },
                 responsive: [
                     {
                         breakpoint: 1139,
                         settings: {
-                            slidesToShow: 3,
-                            customPaging : function(slider, i) {
-                                return '<div class="products-line-slider__dot"></div>';
-                            },
+                            slidesToShow: 3
+                        }
+                    },{
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },{
+                        breakpoint: 550,
+                        settings: {
+                            slidesToShow: 1
                         }
                     }
                 ]
@@ -113,11 +131,19 @@ $(document).ready(function () {
     };
 
     let mobileMenu = function () {
-        $(document).on('click','.mobile-menu__toogle', function () {
-            $(this).parent().addClass('mobile-menu--open')
+        $(document).on('click','.mobile-menu__toggle', function () {
+            $(this).parent().addClass('mobile-menu--open');
+            if ($(window).width() < 768) {
+                $('html').addClass('fixed');
+                $('.wrapper').addClass('mobile-menu-open');
+            }
         });
         $(document).on('click','.mobile-menu__close', function () {
-            $(this).closest('.mobile-menu').removeClass('mobile-menu--open')
+            $(this).closest('.mobile-menu').removeClass('mobile-menu--open');
+            if ($(window).width() < 768) {
+                $('html').removeClass('fixed');
+                $('.wrapper').removeClass('mobile-menu-open');
+            }
         });
     };
 

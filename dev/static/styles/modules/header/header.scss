@@ -23,7 +23,9 @@ header { flex: 0 0 auto; }
     }
     &__main {
         padding: 25px 0;
-        
+        @media screen and (max-width: $phone) {
+            display: none;;
+        }
     }
     &__phones {
         display: flex;
