@@ -40,8 +40,13 @@ mixin informNavLink(link,text)
                     .mobile-menu__phone
                         a(href="tel:+74951203034").mobile-menu__phone-number 8 (495) 120-30-34
                         a(href="#").mobile-menu__phone-link Заказать звонок
-        .mobile__logo.logo
-                img(src="static/images/content/logo.svg", alt="baby-toys").logo__img
+        if(pageClass === "index-page")
+            .mobile__logo.logo
+                    img(src="static/images/content/logo.svg", alt="baby-toys").logo__img
+        else
+            a(href="index.html")
+                .mobile__logo.logo
+                    img(src="static/images/content/logo.svg", alt="baby-toys").logo__img
         .search
             form.search__form
                 .search__input-wrapper

@@ -1,6 +1,7 @@
 .header {
     &__mobile {
         display: none;
+        box-shadow: 0 1px 3px 0 rgba(38, 38, 38, 0.5) inset 0 -1px 0 0 #eef2f4;
         position: relative;
         margin-bottom: 20px;
         @media screen and (max-width: $tablet) {

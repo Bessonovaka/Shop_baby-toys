@@ -1,7 +1,11 @@
 .header__main
     .container
         .header__content
-            .header__logo.logo
+            if(pageClass === "index-page")
+                .header__logo.logo
+                    img(src="static/images/content/logo.svg", alt="baby-toys").logo__img
+            else
+                a(href="index.html").header__logo.logo
                     img(src="static/images/content/logo.svg", alt="baby-toys").logo__img
             .header__phones
                 .header__item.header__item--mobile

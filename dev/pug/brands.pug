@@ -1,0 +1,28 @@
+extends layout/main
+
+block variables
+    -var title = 'Бренды'
+    -var pageClass = 'brands-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Бренды
+    section.s-brands
+        .container
+            .brands
+                h1.title-page Бренды
+                ul.brands__list
+                    each brand in [{img:'micro', name:'Micro'},{img:'puky', name:'PUKY'},{img:'hudora', name:'Hudora'},{img:'globber', name:'Globber'},{img:'kokua', name:'KOKUA'},{img:'stiga', name:'STIGA'},{img:'maxcity', name:'MaxCity'},{img:'hellowood', name:'HelloWood'},{img:'explore', name:'Explore'},{img:'smiley', name:'Smiley'}]
+                        li.brands__item
+                            a(href="#").brand
+                                img(src=`static/images/content/brands/${brand.img}.jpg`, alt="brand").brand__img
+                                span.brand__name=brand.name
+                .content-block
+                    h3.title-block Сео текст по брендам
+                    p.text 
+                    p.text
