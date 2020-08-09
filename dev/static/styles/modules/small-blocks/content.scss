@@ -1,0 +1,70 @@
+.content-block {
+    & > * {
+        margin: 20px 0;
+        &:first-child {margin-top: 0;}
+        &:last-child {margin-bottom: 0;}
+    }
+    &__row {
+        display: flex;
+        @media screen and (max-width: $phone) {
+            flex-direction: column;
+        }
+        & > * {
+            margin-right: 30px;
+            @media screen and (max-width: $phone) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            &:last-child {
+                margin-right: 0;
+                @media screen and (max-width: $phone) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &__col {
+        flex: 1;
+    }
+    &__img {
+        max-width: 100%;
+    }
+    ul {
+        margin: 30px;
+        padding: 0;
+        @media screen and (max-width: $phone) {
+            font-size: 12px;
+        }
+        &.no-dots {
+            li {
+                padding-left: 0;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    li {
+        color: $tundora;
+        margin: 0;
+        line-height: 1.79;
+        padding: 0;
+        padding-left: 35px;
+        position: relative;
+        &::before {
+            content: '';
+            border-radius: 50%;
+            background-color: $tundora;
+            height: 4px;
+            left: 10px;
+            position: absolute;
+            top: 10px;
+            width: 4px;
+        }
+    }
+}
+.s-static-page {
+    & + .s-advantages {
+        padding-top: 0;
+    }
+}

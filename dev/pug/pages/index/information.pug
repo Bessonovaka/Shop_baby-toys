@@ -37,7 +37,7 @@ section.s-information.s-light-bg
                                 ul.brands__list-small
                                     each brand in [{img:'micro', name:'Micro'},{img:'puky', name:'PUKY'},{img:'hudora', name:'Hudora'},{img:'globber', name:'Globber'},{img:'kokua', name:'KOKUA'},{img:'stiga', name:'STIGA'}]
                                         li.brands__item
-                                            a(href="#").brand
+                                            .brand
                                                 img(src=`static/images/content/brands/${brand.img}.jpg`, alt="brand").brand__img
                                                 span.brand__name=brand.name
                 .information-item__footer

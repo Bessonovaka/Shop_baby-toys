@@ -19,7 +19,7 @@ block content
                 ul.brands__list
                     each brand in [{img:'micro', name:'Micro'},{img:'puky', name:'PUKY'},{img:'hudora', name:'Hudora'},{img:'globber', name:'Globber'},{img:'kokua', name:'KOKUA'},{img:'stiga', name:'STIGA'},{img:'maxcity', name:'MaxCity'},{img:'hellowood', name:'HelloWood'},{img:'explore', name:'Explore'},{img:'smiley', name:'Smiley'}]
                         li.brands__item
-                            a(href="#").brand
+                            .brand
                                 img(src=`static/images/content/brands/${brand.img}.jpg`, alt="brand").brand__img
                                 span.brand__name=brand.name
                 .content-block
