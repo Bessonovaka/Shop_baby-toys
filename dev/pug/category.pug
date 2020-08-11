@@ -19,6 +19,9 @@ block content
         .container
             .category__header
                 h1.title-page Беговелы
+                .filter-mobile__toggle
+                    span Фильтры
+                    +icon('arrowtoright','filter-mobile__toggle-icon')
                 .category__sort
                     .select
                         .select__header.select__header--multi
@@ -29,8 +32,11 @@ block content
                             ul.select-list
                                 li.select-list__item цене
                                 li.select-list__item рейтингу
+                                li.select-list__item популярности
             .category__body
                 aside.filter.category__filter
+                    .filter-mobile__close
+                        +icon('arrowtoleft','filter-mobile__close-icon')
                     include pages/category/filter
                 main.category-main
                     section.s-category-main

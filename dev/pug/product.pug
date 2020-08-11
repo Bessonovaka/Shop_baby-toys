@@ -1,0 +1,23 @@
+extends layout/main
+
+block variables
+	-var title = 'Беговел Puky'
+	-var pageClass = 'product-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Каталог
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Беговелы
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Беговелы Puky
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Беговел Puky
+	include pages/index/advantages
+	include pages/product/goods
+	include pages/category/content

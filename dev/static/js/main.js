@@ -198,6 +198,15 @@ $(document).ready(function () {
         });
     };
 
+    let filterToggle = function () {
+        $(document).on('click', '.filter-mobile__toggle', function () {
+            $('.filter').addClass('filter--open');
+        });
+        $(document).on('click', '.filter-mobile__close', function () {
+            $('.filter').removeClass('filter--open');
+        });
+    }
+
     catalogNavHover();
     openSearchForm();
     clearSearchForm();
@@ -209,4 +218,5 @@ $(document).ready(function () {
     categorySlider();
     tabletSubnavMenu();
     select();
+    filterToggle();
 });
