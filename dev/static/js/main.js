@@ -87,7 +87,11 @@ $(document).ready(function () {
                 infinite: false,
                 customPaging : function(slider, i) {
                     let color = $(slider.$slides[i]).data('color');
-                    return '<a class="product-prev__color" style="background-color:' + color + '"></a>'
+                    if (color === '#ffffff') {
+                        return '<div class="product-prev__color product-prev__color--white" style="background-color:' + color + '"></div>'
+                    } else {
+                        return '<div class="product-prev__color" style="background-color:' + color + '"></div>'
+                    }
                 }
             });
         });
@@ -147,6 +151,53 @@ $(document).ready(function () {
         });
     };
 
+    let categorySlider = function () {
+        $('.js-category-slider').slick({
+            slidesToShow: 6,
+            dots: true,
+            arrows: false,
+            appendDots: '.category-slider__dots',
+            customPaging: function (slider, i) {
+                return '<div class="category-slider__dot"></div>';
+            },
+            responsive: [
+                {
+                    breakpoint: 1139,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                },{
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },{
+                    breakpoint: 550,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }
+            ]
+        })
+    };
+
+    let tabletSubnavMenu = function () {
+        $(document).on('click', '.inform-nav__tablet-toggle', function () {
+            $(this).toggleClass('inform-subnav--open');
+        });
+    };
+
+    let select = function () {
+        $(document).on('click','.select__header',function () {
+            $(this).parent().toggleClass('select--open');
+        });
+        $(document).on('click','.select-list__item',function () {
+            let current = $(this).closest('.select').find('.select__current')[0];
+            $(this).closest('.select').removeClass('select--open');
+            $(current).text($(this).text());
+        });
+    };
+
     catalogNavHover();
     openSearchForm();
     clearSearchForm();
@@ -155,5 +206,7 @@ $(document).ready(function () {
     productPrevSlider();
     productLineSlider();
     mobileMenu();
-
+    categorySlider();
+    tabletSubnavMenu();
+    select();
 });

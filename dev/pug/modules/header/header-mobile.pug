@@ -26,10 +26,10 @@ mixin informNavLink(link,text)
                     nav.catalog-nav
                         ul.catalog-nav__list
                             each text in ['Самокаты','Беговелы','Велосипеды','Ролики','Скейты','Батуты','Аксессуары и запчасти','','Настольные игры']
-                                +mainSubnavLink('#',text)
+                                +mainSubnavLink('category.html',text)
                     nav.inform-nav.inform-nav--col
                         ul.inform-nav__list
-                            +informNavLink('#','О компании')
+                            +informNavLink('static-page.html','О компании')
                             +informNavLink('#','Доставка и оплата')
                             +informNavLink('#','Акции')
                             +informNavLink('#','Оптовикам')

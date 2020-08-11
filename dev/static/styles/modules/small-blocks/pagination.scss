@@ -1,0 +1,60 @@
+.pagination {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    &__wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    &__btn {
+        align-items: center;
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        width: 40px;
+    }
+    &__icon {
+        fill: $blaze-orange;
+        height: 18px;
+        width: 18px;
+    }
+    &__list {
+        align-items: center;
+        display: flex;
+    }
+    &__item {
+        border: 1px solid $alto;
+        border-right: 0;
+        &:last-child {
+            border-right: 1px solid $alto;
+        }
+        &.pagination__item--active {
+            .pagination__link {
+                background-color: $alto;
+            }
+        }
+    }
+    &__link {
+        align-items: center;
+        color: $tundora;
+        display: flex;
+        font-size: 12px;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+    }
+    &__count {
+        align-items: center;
+        font-size: 12px;
+        display: flex;
+        margin-left: auto;
+        position: absolute;
+        right: 0;
+        & > * {
+            margin-right: 10px;
+            &:last-child {margin-right: 0;}
+        }
+    }
+}

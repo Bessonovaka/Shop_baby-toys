@@ -1,0 +1,126 @@
+.filter__block
+    span.filter__title Подкатегории
+    ul.filter-list
+        li.filter-list__item
+            a(href="").filter-list__link Беговелы 2 в 1
+        li.filter-list__item
+            a(href="").filter-list__link Беговелы-каталки
+        li.filter-list__item
+            a(href="").filter-list__link Беговелы-самокаты
+        li.filter-list__item
+            a(href="").filter-list__link Спортивные
+.filter__block
+    span.filter__title Подбор параметров
+    .filter__row
+        .select
+            .select__header
+                span.select__current Пол
+                +icon('arrowbottom','select__icon')
+            .select__body
+                ul.select-list
+                    li.select-list__item Мужской
+                    li.select-list__item Женский
+    .filter__row
+        .select
+            .select__header
+                span.select__current Тип колес
+                +icon('arrowbottom','select__icon')
+            .select__body
+                ul.select-list
+                    li.select-list__item двухколесные
+                    li.select-list__item четырехколесные
+                    li.select-list__item колеса из пены
+                    li.select-list__item с надувными колесами
+    .filter__row
+        .select
+            .select__header
+                span.select__current Бренд
+                +icon('arrowbottom','select__icon')
+            .select__body
+                ul.select-list
+                    li.select-list__item Micro
+                    li.select-list__item Hudora
+                    li.select-list__item Globber
+                    li.select-list__item Puky
+                    li.select-list__item Kokua
+                    li.select-list__item Scool
+                    li.select-list__item Strider
+    .filter__row
+        .select
+            .select__header
+                span.select__current Возраст
+                +icon('arrowbottom','select__icon')
+            .select__body
+                ul.select-list
+                    li.select-list__item от 1 года
+                    li.select-list__item от 1,5 лет
+                    li.select-list__item от 2 лет
+                    li.select-list__item от 2,5 лет
+                    li.select-list__item от 3 лет
+                    li.select-list__item от 6 лет
+    .filter__row
+        .select
+            .select__header
+                span.select__current Диаметр колес
+                +icon('arrowbottom','select__icon')
+            .select__body
+                ul.select-list
+                    li.select-list__item 200
+                    li.select-list__item 205
+                    li.select-list__item 225
+                    li.select-list__item 250
+                    li.select-list__item 305
+                    li.select-list__item 317
+                    li.select-list__item 330
+                    li.select-list__item 406
+    .filter__row
+        .select
+            .select__header
+                span.select__current Материал
+                +icon('arrowbottom','select__icon')
+            .select__body
+                ul.select-list
+                    li.select-list__item алюминий
+                    li.select-list__item дерево
+                    li.select-list__item сталь
+    .filter__row
+        .select
+            .select__header
+                span.select__current Опции
+                +icon('arrowbottom','select__icon')
+            .select__body
+                ul.select-list
+                    li.select-list__item с амортизаторами
+                    li.select-list__item с подножкой
+    .filter__row
+        .select
+            .select__header
+                span.select__current Страна
+                +icon('arrowbottom','select__icon')
+            .select__body
+                ul.select-list
+                    li.select-list__item Германия
+                    li.select-list__item Швейцария
+                    li.select-list__item США
+                    li.select-list__item Франция
+    .filter__row
+        .select
+            .select__header
+                span.select__current Тип тормоза
+                +icon('arrowbottom','select__icon')
+            .select__body
+                ul.select-list
+                    li.select-list__item задний
+                    li.select-list__item ручной
+    .filter__row
+        .filter-color
+            span.filter__label Цвет
+            ul.filter-color__list
+                each color in ['000000','666666','ffffff','84d6ff','3333ff','666666','ff0500','ff6500','663300','ffd701','009900','99ff9a','30d5c8','103090']
+                    if(color=== "ffffff")
+                        li.filter-color__item.filter-color__item--white(style=`background-color:#${color}`)
+                    else
+                        li.filter-color__item(style=`background-color:#${color}`)
+    .filter__buttons
+        button.btn.btn--contour-gray Сброс
+        button.btn.btn--bg-orange Подбор

@@ -1,4 +1,6 @@
-@import "content.scss";
+@import "content";
+@import "pagination";
+@import "select";
 
 .logo {
     &__img {
@@ -115,6 +117,7 @@
 }
 .breadcrumbs {
     padding-top: 20px;
+    margin-bottom: 20px;
     &__list {
         align-items: center;
         display: flex;

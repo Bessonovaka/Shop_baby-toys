@@ -1,5 +1,6 @@
 .product-prev {
     border: 1px solid $alto;
+    border-radius: 2px;
     outline: none;
     padding: 20px;
     padding-top: 190px;
@@ -78,5 +79,8 @@
         height: 20px;
         outline: none;
         width: 20px;
+        &.product-prev__color--white {
+            border: 1px solid $alto;
+        }
     }
 }

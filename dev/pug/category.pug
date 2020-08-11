@@ -1,0 +1,70 @@
+extends layout/main
+
+block variables
+    -var title = 'Беговелы'
+    -var pageClass = 'brands-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Каталог
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Беговелы
+    include pages/category/slider
+    .category
+        .container
+            .category__header
+                h1.title-page Беговелы
+                .category__sort
+                    .select
+                        .select__header.select__header--multi
+                            span.select__description Сортировать по
+                            span.select__current популярности
+                            +icon('arrowbottom','select__icon')
+                        .select__body
+                            ul.select-list
+                                li.select-list__item цене
+                                li.select-list__item рейтингу
+            .category__body
+                aside.filter.category__filter
+                    include pages/category/filter
+                main.category-main
+                    section.s-category-main
+                        .products-prev__wrapper.products-prev__wrapper--small
+                            include modules/products/prev1
+                            include modules/products/prev2
+                            include modules/products/prev3
+                            include modules/products/prev4                        
+                            include modules/products/prev1
+                            include modules/products/prev2
+                            include modules/products/prev3
+                            include modules/products/prev4
+                        .pagination__wrapper
+                            .pagination
+                                a(href="").pagination__btn
+                                    +icon('arrowtoleft','pagination__icon')
+                                ul.pagination__list
+                                    each i in [1,2,3,4,5]
+                                        if(i===1)
+                                            li.pagination__item.pagination__item--active
+                                                a(href="#").pagination__link=i
+                                        else
+                                            li.pagination__item
+                                                a(href="#").pagination__link=i
+                                a(href="").pagination__btn
+                                    +icon('arrowtoright','pagination__icon')
+                            .pagination__count
+                                span.pagination__text Выводить по:
+                                .select
+                                    .select__header
+                                        span.select__current 12
+                                        +icon('arrowbottom','select__icon')
+                                    .select__body
+                                        ul.select-list
+                                            li.select-list__item 24
+                                            li.select-list__item 36
+                    include pages/category/content
