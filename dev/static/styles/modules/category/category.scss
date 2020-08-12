@@ -10,12 +10,28 @@
         align-items: center;
         display: flex;
         margin-bottom: 20px;
+        @media screen and (max-width: $phone) {
+            flex-wrap: wrap;
+        }
         .title-page {
             margin-bottom: 0;
+            @media screen and (max-width: $phone) {
+                flex: 0 0 100%;
+                margin-bottom: 25px;
+                width: 100%;
+            }
+        }
+        & > * {
+            margin-right: 10px;
+            &:last-child {margin-right: 0;}
         }
     }
     &__sort {
         margin-left: auto;
+        min-width: 250px;
+        @media screen and (max-width: $phone) {
+            min-width: 170px;
+        }
     }
     &__body {
         align-items: flex-start;

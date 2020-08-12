@@ -2,6 +2,7 @@
     background-color: $athens-gray;
     border-radius: 4px;
     padding: 0 0 20px;
+    position: relative;
     &__header {
         display: flex;
         justify-content: center;
@@ -15,12 +16,19 @@
         line-height: 1.58;
         padding: 10px 20px;
         text-align: center;
+        @media screen and (max-width: $phone) {
+            font-size: 14px;
+            line-height: 1.43;
+        }
     }
     &__item {
         font-size: 12px;
         margin: 0 10px;
         outline: none;
         text-align: center;
+        @media screen and (max-width: $phone) {
+            padding: 0;
+        }
     }
     &__icon {
         display: block;

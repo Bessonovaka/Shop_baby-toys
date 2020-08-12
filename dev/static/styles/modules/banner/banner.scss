@@ -1,5 +1,4 @@
 .s-banner {
-    padding-bottom: 0;
     @media screen and (max-width: $phone) {
         padding-top: 0;
     }
@@ -13,7 +12,7 @@
     border-radius: 4px;
     height: 300px;
     overflow: hidden;
-    padding: 0 90px;
+    padding: 0 120px;
     position: relative;
     @media screen and (max-width: $phone) {
         height: 200px;

@@ -1,0 +1,41 @@
+.products-border-line-slider {
+    &__header {
+        align-items: center;
+        display: flex;
+        .title-section {
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+    }
+    &__navigation {
+        display: flex;
+        margin-left: auto;
+    }
+    .product-prev {
+        margin: 10px 15px 30px;
+        @media screen and (max-width: 549px) {
+            margin: 10px 0 30px;
+        }
+    }
+    &__btn {
+        align-items: center;
+        border: 1px solid $alto;
+        cursor: pointer;
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        .products-border-line-slider__btn {
+            &--prev {
+                border-radius: 2px 0 0 2px;
+            }
+            &--next {
+                border-radius: 2px 0 0 2px;
+            }
+        }
+    }
+    &__icon {
+        height: 15px;
+        fill: $blaze-orange;
+        width: 15px;
+    }
+}

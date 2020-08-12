@@ -31,6 +31,11 @@
             }
         }
     }
+    &__description {
+        @media screen and (max-width: $phone) {
+            display: none;
+        }
+    }
     &__icon {
         height: 15px;
         fill: $blaze-orange;

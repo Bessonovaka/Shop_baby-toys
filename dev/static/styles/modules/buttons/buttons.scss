@@ -11,6 +11,7 @@
     text-align: center;
     padding: 0 20px;
     transition: all linear .3s;
+    white-space: nowrap;
     width: 100%;
     &:hover {
         background-color: $blaze-orange;
@@ -49,6 +50,10 @@
             height: 30px;
             line-height: 28px;
             padding: 0 15px;
+        }
+        &--big {
+            line-height: 48px;
+            height: 50px;
         }
         &--bg {
             &-orange {

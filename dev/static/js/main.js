@@ -62,11 +62,11 @@ $(document).ready(function () {
                 tab = $(tabsBody).find('.' + tabName);
             $(this).addClass('tabs-navigation__item--active').siblings().removeClass('tabs-navigation__item--active');
             $(tab).addClass('tab--active').siblings().removeClass('tab--active');
-            if ($(tabsBody).find('.js-product-line-slider').length) {
-                $('.js-product-line-slider').each(function () {
+            if ($(tabsBody).find('.js-products-line-slider').length) {
+                $('.js-products-line-slider').each(function () {
                     $(this).slick('refresh');
                 });
-                $('.js-product-line__slider').each(function () {
+                $('.js-products-line__slider').each(function () {
                     $(this).slick('refresh');
                 });
             }
@@ -181,6 +181,32 @@ $(document).ready(function () {
         })
     };
 
+    let productSlider = function () {
+        $('.js-product-slider-dots').slick({
+            asNavFor: '.js-product-slider',
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            vertical: true,
+            prevArrow: '.product-slider-dots__btn--prev',
+            nextArrow: '.product-slider-dots__btn--next',
+            focusOnChange: true,
+            infinite: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: "unslick"
+                }
+            ]
+        });
+        $('.js-product-slider').slick({
+            asNavFor: '.js-product-slider-dots',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            infinite: false
+        });
+    };
+
     let tabletSubnavMenu = function () {
         $(document).on('click', '.inform-nav__tablet-toggle', function () {
             $(this).toggleClass('inform-subnav--open');
@@ -207,6 +233,94 @@ $(document).ready(function () {
         });
     }
 
+    let productsBorderLineSlider = function () {
+        $('.js-products-border-line-slider').each(function (idx) {
+            let productsBorderLineSliderId = "products-border-line-slider-" + idx;
+            this.closest('.products-border-line-slider').id = productsBorderLineSliderId;
+            $(this).slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                infinite: false,
+                dots: true,
+                appendDots: '#' + productsBorderLineSliderId + ' .products-border-line-slider__dots',
+                prevArrow: '#' + productsBorderLineSliderId + ' .products-border-line-slider__btn--prev',
+                nextArrow: '#' + productsBorderLineSliderId + ' .products-border-line-slider__btn--next',
+                responsive: [
+                    {
+                        breakpoint: 1139,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },{
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },{
+                        breakpoint: 550,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    };
+
+    let colorClicked = function () {
+        $(document).on('click','.color-list__item', function () {
+            $(this).addClass('color-list__item--active').siblings().removeClass('color-list__item--active')
+        });
+    };
+
+    let scrollToElement = function () {
+        $('.scroll-link')
+            .not('[href="#')
+            .not('[href="#0')
+            .click(function (event) {
+                if (
+                    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                    &&
+                    location.hostname == this.hostname
+                ) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
+                    if (target.length) {
+                        event.preventDefault();
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - 50
+                        }, 1000, function () {
+                            var $target = $(target);
+                            $target.focus();
+                            if ($target.is(":focus")) {
+                                return false;
+                            } else {
+                                $target.attr('tabindex', '-1');
+                                $target.focus();
+                            };
+                        });
+                    }
+                }
+            });
+        
+    };
+
+    let productDetalWidth = function () {
+        let detalArr = $('.product-detals-navigation__item'),
+            detalWidth = 0;
+        for (let i = 0; i < detalArr.length; i++) {
+            detalWidth = detalWidth + detalArr[i].offsetWidth;
+        }
+        $('.product-detals-navigation').css('min-width', detalWidth);
+    };
+
+    let productDetalTablet = function () {
+        if (window.innerWidth < 1140) {
+            $('.product-info__footer').appendTo('.product__header');
+            $('.product-info__header').prependTo('.product__header');
+        }
+    };
+
     catalogNavHover();
     openSearchForm();
     clearSearchForm();
@@ -219,4 +333,10 @@ $(document).ready(function () {
     tabletSubnavMenu();
     select();
     filterToggle();
+    productSlider();
+    productsBorderLineSlider();
+    colorClicked();
+    scrollToElement();
+    productDetalTablet();
+    productDetalWidth();
 });

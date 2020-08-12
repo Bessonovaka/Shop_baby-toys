@@ -40,6 +40,7 @@
             border-bottom: 2px solid $alto;
             line-height: 48px;
             height: 50px;
+            min-width: 150px;
             padding-left: 10px;
             white-space: nowrap;
             @media screen and (max-width: $tablet) {
@@ -53,6 +54,9 @@
                 @media screen and (max-width: $tablet) {
                     margin-right: 0;
                 }
+            }
+            &:hover {
+                border-bottom-color: $blaze-orange;
             }
             &.tabs-navigation__item--active {
                 border-bottom-color: $blaze-orange;
