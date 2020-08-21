@@ -1,0 +1,31 @@
+.popup.mfp-hide#popup-signin
+    .hide-on-success
+        .popup__header
+            span.popup__title Регистация
+            .popup__close
+                +icon('close','popup__close-icon')
+        .popup__body
+            form.form
+                .form__body
+                    .form-line
+                        .form-group.form-group--required
+                            .form-group__header
+                                label.form-group__label Электронная почта
+                            .form-group__body
+                                input(placeholder="email@email.com" type="email" name="email").input-field
+                    .form-line
+                        .form-group.form-group--required
+                            .form-group__header
+                                label.form-group__label Пароль
+                            .form-group__body
+                                input(placeholder="Введите пароль" type="password" name="password").input-field 
+                    .form-line
+                        .form-group.form-group--required
+                            .form-group__header
+                                label.form-group__label Повторите пароль
+                            .form-group__body
+                                input(placeholder="Повторите пароль" type="password" name="password").input-field
+                .form__footer
+                    .form-line
+                        .form-group
+                            input(type="submit" value="Зарегистрироваться").btn.btn--bg-orange

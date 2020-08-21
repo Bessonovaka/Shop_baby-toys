@@ -1,24 +1,24 @@
 $(document).ready(function () {
   svg4everybody({});
 
-  let catalogNavHover = function () {
-    $('.catalog-nav__item').hover(
-      function () {
-        let parentList = $(this).closest('.catalog-nav__list');
-        if ($(this).children('.catalog-nav__list').length) {
-          let catNavHeight = $(this).children('.catalog-nav__list').outerHeight();
-            if (parentList.outerHeight() < catNavHeight) {
-                parentList.css('height', catNavHeight);
-              }
-                parentList.css('width', '720');
-          }
-      }, function () {
+    let catalogNavHover = function () {
+        $('.catalog-nav__item').hover(
+            function () {
+                let parentList = $(this).closest('.catalog-nav__list');
+                if ($(this).children('.catalog-nav__list').length) {
+                    let catNavHeight = $(this).children('.catalog-nav__list').outerHeight();
+                    if (parentList.outerHeight() < catNavHeight) {
+                        parentList.css('height', catNavHeight);
+                    }
+                    parentList.css('width', '720');
+                }
+            }, function () {
             let parentList = $(this).closest('.catalog-nav__list');
                 parentList.css('height', 'auto');
                 parentList.css('width', 'auto');
             }
         )
-  };
+    };
 
     let openSearchForm = function () {
         $(document).on('click','.search__icon',function () {
@@ -321,9 +321,52 @@ $(document).ready(function () {
         }
     };
 
+    let popupLink = function () {
+        $('.js-popup-link').magnificPopup({
+            showCloseBtn: false
+        });
+        $(document).on('click', '.popup__close', function () {
+            $.magnificPopup.close();
+        })
+    };
+
+    let formValidate = function () {
+        $('form').each(function () {
+            $(this).on('submit', function () {
+                $(this).validate({
+                    rules: {
+                        name: 'required',
+                        phone: 'required',
+                        email: 'required',
+                        password: 'required'
+                    },
+                    messages: {
+                        name: 'Введите корректное имя',
+                        phone: 'Введите корректный номер',
+                        email: 'Введите корректный email',
+                        password: 'Введите корректный пароль'
+                    },
+                    errorPlacement: function (error, element) {
+                        element.attr("placeholder", error[0].outerText);
+                    }
+                });
+                if ($(this).valid()) {
+                    let wrap = $(this)[0].closest('.hide-on-success');
+                    if (wrap) {
+                        $(wrap).siblings('.show-on-success').show();
+                        $(wrap).hide();
+                    }
+                }
+                return false;
+            })
+        });
+    }
+
     catalogNavHover();
     openSearchForm();
     clearSearchForm();
+    popupLink();
+    formValidate();
     bannerSlider();
     tabs();
     productPrevSlider();
@@ -340,3 +383,4 @@ $(document).ready(function () {
     productDetalTablet();
     productDetalWidth();
 });
+

@@ -1,0 +1,43 @@
+.popup {
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+    transition: all 0.8s ease 0s;
+    &__header {
+        align-items: center;
+        border-radius: 4px 4px 0 0;
+        color: $white;
+        background-color: $blaze-orange;
+        display: flex;
+        padding: 20px 40;
+    }
+    &__close {
+        align-items: center;
+        display: flex;
+        height: 30px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: 15px;
+        width: 30px;
+        &-icon {
+            cursor: pointer;
+            height: 30px;
+            fill: $white;
+            opacity: 0.6;
+            width: 30px;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    &__body {
+        background-color: $white;
+        border-radius: 0 0 4px 4px;
+        padding: 40px;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 15px;
+    }
+}

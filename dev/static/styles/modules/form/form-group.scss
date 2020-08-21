@@ -1,0 +1,35 @@
+.form-group {
+    &.form-group--required {
+        .form-group {
+            &__label {
+                &:after {
+                    content: '*';
+                    color: $warning-color;
+                    position: absolute;
+                    right: -10px;
+                    top: 0;
+                }
+            }
+        }
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    &__label {
+        margin-bottom: 5px;
+        position: relative;
+    }
+    &__header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-submit {
+        display: flex;
+        & > * {
+            &:not(:last-child) {margin-right: 20px;}
+        }
+    }
+}

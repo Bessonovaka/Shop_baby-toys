@@ -1,0 +1,51 @@
+.popup.mfp-hide#popup-callback
+    .hide-on-success
+        .popup__header
+            span.popup__title Заказать звонок
+            .popup__close
+                +icon('close','popup__close-icon')
+        .popup__body
+            form.form
+                .form__body
+                    .form-line
+                        .form-group.form-group--required
+                            .form-group__header
+                                label.form-group__label Ваше имя
+                            .form-group__body
+                                input(placeholder="Ваше имя" type="text" name="name").input-field
+                    .form-line
+                        .form-group.form-group--required
+                            .form-group__header
+                                label.form-group__label Телефон
+                            .form-group__body
+                                input(placeholder="+7(912)123-34-45" type="phone" name="phone").input-field 
+                .form__footer
+                    .form-line
+                        .form-group
+                            input(type="submit" value="Заказать звонок").btn.btn--bg-orange
+                        p.form__info Нажимая кнопку я подтверждаю согласие на <a (href="") class="form-info__link"> обработку персональных данных </a>
+    .show-on-success
+        .popup__header
+            span.popup__title Мы вам перезвоним
+            .popup__close
+                +icon('close','popup__close-icon')
+        .popup__body
+            .form-success
+                .form-success__block
+                    .form-success__info
+                        span.form-success__text Номер вашей заявки
+                        span.form-success__number 1234
+                        p.form-success__text Менеджер перезвонит вам сеговдня в <b> 16:40 </b> по Московскому времени
+                .form-success__block
+                    span.form-success__label Не готовы ждать?
+                    .form-success__row
+                        .form-success__col
+                            .form-success-contacts
+                                +icon('phone','form-success-contacts__icon')
+                                span.form-success-contacts__text Звоните круглосуточно
+                                a(href="tel:+79048625209").form-success-contacts__link +7 904 862-52-09
+                        .form-success__col
+                            .form-success-contacts
+                                +icon('email','form-success-contacts__icon')
+                                span.form-success-contacts__text Напишите нам email
+                                a(href="mailto: bessonova.en@mail.ru").form-success-contacts__link baby-toys@mail.ru

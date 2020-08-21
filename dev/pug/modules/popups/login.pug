@@ -1,0 +1,26 @@
+.popup.mfp-hide#popup-login
+    .hide-on-success
+        .popup__header
+            span.popup__title Авторизация
+            .popup__close
+                +icon('close','popup__close-icon')
+        .popup__body
+            form.form
+                .form__body
+                    .form-line
+                        .form-group.form-group--required
+                            .form-group__header
+                                label.form-group__label Электронная почта
+                            .form-group__body
+                                input(placeholder="email@email.com" type="email" name="email").input-field
+                    .form-line
+                        .form-group.form-group--required
+                            .form-group__header
+                                label.form-group__label Пароль
+                                a(href="").link Забыли пароль?
+                            .form-group__body
+                                input(placeholder="Введите пароль" type="password" name="password").input-field 
+                .form__footer
+                    .form-line
+                        .form-group
+                            input(type="submit" value="Войти").btn.btn--bg-orange

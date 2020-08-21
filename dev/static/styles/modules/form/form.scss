@@ -1,0 +1,84 @@
+@import "file-upload";
+@import "input-field";
+@import "form-group";
+
+.show-on-success {
+    display: none;
+    .popup__body {
+        padding: 0;
+    }
+}
+
+.form {
+    &__body {
+        & > * {
+            margin-bottom: 20px;
+        }
+    }
+    &__info {
+        color: $mid-gray;
+        margin-top: 5px;
+    }
+    &-info {
+        &__link {
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &-success {
+        background-color: $athens-gray;
+        & > * {
+            margin: 10px 0;
+            &:first-child {margin-top: 0;}
+            &:last-child {margin-bottom: 0;}
+        }
+        &__block {
+            background-color: $white;
+            padding: 30px 40px;
+        }
+        &__row {
+            display: flex;
+            & > * {
+                margin-right: 10px;
+                &:last-child {margin-right: 0;}
+            }
+        }
+        &-contacts {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-left: 50px;
+            &__icon {
+                fill: $blaze-orange;
+                height: 40px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 40px;
+            }
+            &__link {
+                color: $tundora;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        &__text {
+            font-size: 18px;
+            margin-right: 20px;
+        }
+        &__number {
+            font-size: 18px;
+            font-weight: 600;
+            color: $blaze-orange;
+        }
+        &__label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+    }
+}

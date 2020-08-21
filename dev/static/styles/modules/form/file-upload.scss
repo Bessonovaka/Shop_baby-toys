@@ -1,0 +1,20 @@
+.file-upload {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    input[type="file"] {display: none;}
+    &__custom {
+        color: $blaze-orange;
+        display: flex;
+        & > * {
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+    &__icon {
+        fill: $blaze-orange;
+        height: 16px;
+        width: 12px;
+    }
+}
