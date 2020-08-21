@@ -1,0 +1,52 @@
+.cart-table
+    .cart-table__header
+        .cart-table__cell.cart-table__cell--product
+            span.cart-table__cell-title Товар
+        .cart-table__cell.cart-table__cell--discount
+            span.cart-table__cell-title Скидка
+        .cart-table__cell.cart-table__cell--price
+            span.cart-table__cell-title Цена
+        .cart-table__cell.cart-table__cell--count
+            span.cart-table__cell-title Количество
+        .cart-table__cell.cart-table__cell--sum
+            span.cart-table__cell-title Сумма
+        .cart-table__cell.cart-table__cell--remove
+    .cart-table__body
+        .cart-table__row
+            .cart-table__cell.cart-table__cell--product
+                .cart-table-product
+                    .cart-table-product__img-wrapper
+                        img(src="static/images/content/products/product-1.jpg", alt="Изображение товара").cart-table-product__img
+                    .cart-table-product__body
+                        span.cart-table__title
+                            a(href="product.html") Трехколесный самокат Mini Micro синий
+                        span.cart-table__text Артикул ММ0008
+            .cart-table__cell.cart-table__cell--discount
+                .cart-table-discount
+                    span(data-discount="0.1").cart-table__title#discount 10%
+            .cart-table__cell.cart-table__cell--price
+                .cart-table-price
+                    span(data-sum="4500").cart-table__title#price-new 4 500 p.
+            .cart-table__cell.cart-table__cell--count
+                .counter
+                    .counter__btn.minus
+                        +icon('minus','counter__icon')
+                    input(type="text" value="1").counter__current
+                    .counter__btn.plus
+                        +icon('plus','counter__icon')
+            .cart-table__cell.cart-table__cell--sum
+                span.cart-table__title.product-price 4 500 p.
+            .cart-table__cell.cart-table__cell--remove
+                .cart-table__remove
+                    +icon('close','cart-table__remove-icon')
+    .cart-table__footer
+        .cart-total
+            .cart-total__row
+                span.cart-total__label Без скидки:
+                span.cart-total__value.cart-total__value--old 4 500 p.
+            .cart-total__row
+                span.cart-total__label Скидка:
+                span.cart-total__value--discount 450 p.
+            .cart-total__row.cart-total__row--final
+                span.cart-total__label Итого:
+                span.cart-total__value 4 500 р.

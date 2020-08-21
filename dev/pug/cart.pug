@@ -1,0 +1,30 @@
+extends layout/main
+
+block variables
+    -var title = 'Корзина'
+    -var pageClass = 'cart-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Каталог
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Корзина
+    .cart
+        .container
+            include pages/cart/cart-nav
+            h1.title-page Корзина
+            .cart__body
+                .cart-block
+                    .cart-block__header
+                        span.cart-block__title Выбранные товары 
+                    .cart-block__body
+                        include pages/cart/cart-table
+                .cart-block
+                    .cart-block__header
+                        span.cart-block__title Оформление заказа
+                    form(name="cart-form").form.cart-form

@@ -362,11 +362,53 @@ $(document).ready(function () {
         });
     }
 
+    let cartCounter = function () {
+        $(document).on('click', '.minus', function () {
+            let $input = $(this).parent().find('input');
+            let count = parseInt($input.val()) - 1;
+            count = count < 1 ? 1 : count;
+            $input.val(count);
+            $input.change();
+            let discount = $('#discount').data('discount');
+            let summ = 0;
+            let price = $('#price-new').data('sum');
+            if (discount !== 0) {
+                summ += count*price*(1-discount);
+            } else {
+                summ += count*price;
+            }
+            discount = (count*price)*discount;
+            $('.product-price').text(summ+' p.');
+            $('.cart-total__value--discount').text(discount+' p.');
+            $('.cart-total__value').text(summ+' p.');
+            return false;
+        });
+        $(document).on('click', '.plus', function () {
+            let $input = $(this).parent().find('input');
+            $input.val(parseInt($input.val()) + 1);
+            $input.change();
+            let discount = $('#discount').data('discount');
+            let summ = 0;
+            let price = $('#price-new').data('sum');
+            let count = $('.counter').find('input').val();
+            if (discount !== 0) {
+                summ += count*price*(1-discount);
+            } else {
+                summ += count*price;
+            }
+            discount = (count*price)*discount;
+            $('.product-price').text(summ+' p.');
+            $('.cart-total__value--discount').text(discount+' p.');
+            $('.cart-total__value').text(summ+' p.');
+        });
+    }
+
     catalogNavHover();
     openSearchForm();
     clearSearchForm();
     popupLink();
     formValidate();
+    cartCounter();
     bannerSlider();
     tabs();
     productPrevSlider();

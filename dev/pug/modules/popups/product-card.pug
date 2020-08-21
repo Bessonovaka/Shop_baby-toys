@@ -1,0 +1,12 @@
+.popup.mfp-hide#popup-product-card
+    .hide-on-success
+        .popup__header
+            span.popup__title Товар добавлен в корзину
+            .popup__close
+                +icon('close','popup__close-icon')
+        .popup__body
+            .product-prev__img-wrapper(data-color="#f5a623")
+                img(src="static/images/content/products/product-1.jpg", alt="Изображение товара").product-prev__img
+            .buttons-group
+                a(href="category.html").btn Продолжить покупки
+                a(href="busket.html").btn В корзину

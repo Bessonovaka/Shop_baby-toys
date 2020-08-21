@@ -201,3 +201,31 @@
         }
     }  
 }
+.counter {
+    border: 1px solid #dddddd;
+    border-radius: 2px;
+    height: 30px;
+    display: flex;
+    width: 100px;
+    &__btn {
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        flex: 0 0 30px;
+        justify-content: center;
+    }
+    &__icon {
+        width: 10px;
+        height: 10px;
+        fill: $blaze-orange;
+    }
+    &__current {
+        border: 1px solid #dddddd;
+        color: #4b4b4b;
+        font-weight: 600;
+        text-align: center;
+        width: 30px;
+    }
+}
