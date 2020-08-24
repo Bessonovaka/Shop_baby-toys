@@ -1,5 +1,6 @@
 @import "cart-nav";
 @import "cart-table";
+@import "order-table";
 
 .cart {
     &-block {
@@ -42,6 +43,10 @@
                 top: 50%;
                 width: 250%;
             }
+        }
+        &__footer {
+            display: flex;
+            justify-content: flex-end;
         }
     }
 }

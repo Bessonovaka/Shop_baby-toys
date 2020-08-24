@@ -27,4 +27,7 @@ block content
                 .cart-block
                     .cart-block__header
                         span.cart-block__title Оформление заказа
-                    form(name="cart-form").form.cart-form
+                    .cart-block__body.order-tables
+                        include pages/cart/order-table
+                    .cart-block__footer
+                        a(href="#").btn.btn--inline Оформить заказ

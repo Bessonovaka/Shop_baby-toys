@@ -1,0 +1,39 @@
+.order-tables {
+    display: flex;
+    margin-bottom: 25px;
+    @media screen and (max-width: $tablet) {
+        flex-direction: column;
+    }
+    & > * {
+        margin-right: 20px;
+        @media screen and (max-width: $tablet) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }   
+    }
+}
+.order-table {
+    align-items: space-between;
+    display: flex;
+    flex: 0 0 32%;
+    flex-direction: column;
+    height: auto;
+    border: 1px solid $athens-gray;
+    border-radius: 6px;
+    font-weight: 600;
+    width: 32%;
+    @media screen and (max-width: $tablet) {
+        flex: 1;
+        width: 100%;
+    }
+    & > * {
+        padding: 20px;
+    }
+    &__header {
+        background-color: $athens-gray;
+    }
+}

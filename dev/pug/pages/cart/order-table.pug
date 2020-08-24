@@ -1,0 +1,81 @@
+.order-table
+    .order-table__header
+        .order-table__cell
+            span.order-table__title Информация для оплаты и доставки товара
+    .order-table__body
+        form(action="post").form
+            .form__body
+                .form__title Адрес доставки
+                .form-line
+                    .form-group.form-group--required
+                        .form-group__header
+                            label.form-group__label E-Mail:
+                        .form-group__body
+                            input(placeholder="" type="email" name="email").input-field
+                .form-line
+                    .form-group.form-group--required
+                        .form-group__header
+                            label.form-group__label Телефон:
+                        .form-group__body
+                            input(placeholder="" type="phone" name="phone").input-field
+                .form-line
+                    .form-group.form-group--required
+                        .form-group__header
+                            label.form-group__label Местоположение:
+                        .form-group__body
+                            input(placeholder="Москва, Россия" type="text" name="address").input-field
+                .form-line
+                    .form-group.form-group--required
+                        .form-group__header
+                            label.form-group__label Адрес:
+                        .form-group__body
+                            input(placeholder="" type="text" name="address").input-field
+                .form-line
+                    .form-group.form-group--required
+                        .form-group__header
+                            label.form-group__label Контактное лицо:
+                        .form-group__body
+                            input(placeholder="" type="text" name="person").input-field
+.order-table
+    .order-table__header
+        .order-table__cell
+            span.order-table__title Служба доставки
+    .order-table__body
+        form(action="post").form
+            .form__body
+                .form-line
+                    .form-group
+                        .form-group__body
+                            p
+                                input(type="radio").checkbox
+                                b Доставка курьером платно
+                            p до 1 дней 
+                            p Стоимость 200 руб.
+                            p (для суммы заказа от 4000 до 5000 руб.). По г. Москве в пределах МКАД. Далее стоимость доставки рассчитывается по тарифу 30 р/км. Доставка осуществляется в течение дня в согласованный с Вами промежуток времени.
+                .form-line
+                    .form-group
+                        .form-group__body
+                            p
+                                input(type="radio").checkbox
+                                b Самовывоз
+                            p Стоимость
+                            p По будням с 10ºº до 18ºº ч.   
+.order-table
+    .order-table__header
+        .order-table__cell
+            span.order-table__title Служба доставки
+    .order-table__body
+        form(action="post").form
+            .form__body
+                .form-line
+                    .form-group
+                        .form-group__body
+                            p
+                                input(type="radio").checkbox
+                                b Банковские карты
+                .form-line
+                    .form-group
+                        .form-group__body
+                            p
+                                input(type="radio").checkbox
+                                b Наличный рассчет 
