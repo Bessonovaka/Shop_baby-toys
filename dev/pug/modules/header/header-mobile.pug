@@ -29,13 +29,13 @@ mixin informNavLink(link,text)
                                 +mainSubnavLink('category.html',text)
                     nav.inform-nav.inform-nav--col
                         ul.inform-nav__list
-                            +informNavLink('static-page.html','О компании')
-                            +informNavLink('static-page.html','Доставка и оплата')
-                            +informNavLink('static-page.html','Акции')
-                            +informNavLink('static-page.html','Оптовикам')
-                            +informNavLink('static-page.html','Новости')
-                            +informNavLink('static-page.html','Гарантии')
-                            +informNavLink('static-page.html','Контакты')
+                            +informNavLink('about-us.html','О компании')
+                            +informNavLink('delivery.html','Доставка и оплата')
+                            +informNavLink('stocks.html','Акции')
+                            +informNavLink('opt.html','Оптовикам')
+                            +informNavLink('news.html','Новости')
+                            +informNavLink('guarantee.html','Гарантии')
+                            +informNavLink('contacts.html','Контакты')
                 .mobile-menu__footer
                     .mobile-menu__phone
                         a(href="tel:+74951203034").mobile-menu__phone-number 8 (495) 120-30-34
@@ -63,5 +63,5 @@ mixin informNavLink(link,text)
                     a(href="#").mobile-user-nav__link
                         +icon('user','mobile-user-nav__icon')
                 li.mobile-user-nav__item
-                    a(href="#").mobile-user-nav__link
+                    a(href="cart.html").mobile-user-nav__link
                         +icon('busket','mobile-user-nav__icon')
