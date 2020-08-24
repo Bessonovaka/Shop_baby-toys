@@ -49,28 +49,5 @@ block content
                             include modules/products/prev2
                             include modules/products/prev3
                             include modules/products/prev4
-                        .pagination__wrapper
-                            .pagination
-                                a(href="").pagination__btn
-                                    +icon('arrowtoleft','pagination__icon')
-                                ul.pagination__list
-                                    each i in [1,2,3,4,5]
-                                        if(i===1)
-                                            li.pagination__item.pagination__item--active
-                                                a(href="#").pagination__link=i
-                                        else
-                                            li.pagination__item
-                                                a(href="#").pagination__link=i
-                                a(href="").pagination__btn
-                                    +icon('arrowtoright','pagination__icon')
-                            .pagination__count
-                                span.pagination__text Выводить по:
-                                .select
-                                    .select__header
-                                        span.select__current 12
-                                        +icon('arrowbottom','select__icon')
-                                    .select__body
-                                        ul.select-list
-                                            li.select-list__item 24
-                                            li.select-list__item 36
+                        include modules/pagination/pagination
                     include pages/category/content

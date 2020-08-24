@@ -1,0 +1,30 @@
+extends layout/main
+
+block variables
+    -var title = 'Акции'
+    -var pageClass = 'static-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Акции
+    section.s-static-page
+        .container
+            h1.title-page Акционные товары
+                main.stock-main
+                    section.s-category-main
+                        .products-prev__wrapper.products-prev__wrapper--small
+                            include modules/products/prev1
+                            include modules/products/prev2
+                            include modules/products/prev3
+                            include modules/products/prev4                        
+                            include modules/products/prev1
+                            include modules/products/prev2
+                            include modules/products/prev3
+                            include modules/products/prev4
+                        include modules/pagination/pagination
+            include pages/index/advantages

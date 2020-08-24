@@ -94,5 +94,10 @@ button { outline: none; }
   position: relative;
 }
 
+.link {
+  color: $main-shaft;
+  &:hover {text-decoration: underline;}
+}
+
 //Модули
 @import "modules/modules";

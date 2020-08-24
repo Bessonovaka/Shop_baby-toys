@@ -1,0 +1,38 @@
+extends layout/main
+
+block variables
+    -var title = 'Контакты'
+    -var pageClass = 'static-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Контакты
+    section.s-static-page
+        .container
+            h1.title-page Контакты
+            .content-block
+                .content-block__col
+                    p.text <b>Телефон:</b> 8 (495) 120-30-34 
+                    p.text <b>E-mail:</b> <a href="mailto:sale@baby-toys.ru">sale@baby-toys.ru</a>
+                    p.text <b>Заказы и консультации по телефону:</b> 10:00-20:00 без выходных
+                    p.text <b>Самовывоз:</b> по будням 10:00-19:00, в субботу 12:00-17:00 
+                    p.text <b>Адрес:</b> г. Москва, ул Кантемировская , 61
+                .content-block__row
+                    .content-block__col
+                        h2.title-section Юридические данные
+                        ul.no-dots
+                            li Индивидуальный предприниматель : Демин Павел Витальевич
+                            li ИНН: 774333907100
+                            li Расчетный  счет: 40802810502360001362
+                            li Банк:  АО "АЛЬФА-БАНК"
+                            li Корр.счет: 30101810200000000593
+                            li БИК: 044525593
+                            li Юридический адрес: 125414, г. Москва, ул Петрозаводская , д. 10 , кв. 111
+                            li Фактический адрес:  125414, г. Москва, ул Петрозаводская , д. 10 , кв. 111
+                            li Почтовый  адрес:  125414, г. Москва, ул Петрозаводская , д. 10 , кв. 111                           li Почтовый  адрес:  125414, г. Москва, ул Петрозаводская , д. 10 , кв. 111
+            include pages/index/advantages

@@ -1,0 +1,33 @@
+
+extends layout/main
+
+mixin newsItem(link,text,img)
+    li.news__item
+            a(href=link).news__link
+                .news__img(style=`background-image: url(static/images/content/news/news-${img}.jpg)` alt="Новости")
+                span.news__title=text
+
+block variables
+    -var title = 'Новости'
+    -var pageClass = 'news-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Новости
+    section.s-static-page
+        .container
+            h1.title-page Новости
+            ul.news
+                +newsItem('news-1.html','Беговелогонка 1+ Puky','1')
+                +newsItem('news-1.html','Новинка Puky Moto','2')
+                +newsItem('news-1.html','Новинка Puky Moto','3')
+                +newsItem('news-1.html','Новинка Puky Moto','4')
+                +newsItem('news-1.html','Новинка Puky Moto','5')
+                +newsItem('news-1.html','Новинка Puky Moto','6')
+            include modules/pagination/pagination
+            include pages/index/advantages

@@ -1,28 +1,35 @@
 mixin informNavLink(link,text,mod)
     li(class=mod).inform-nav__item
-        a(href=link).js-popup-link.inform-nav__link=text
+        a(href=link).inform-nav__link=text
 
 .header__top
     .container
         .header__content
             nav.header__nav.inform-nav
                 ul.inform-nav__list
-                   +informNavLink("static-page.html","О компании")
-                   +informNavLink("static-page.html","Доставка и оплата")
-                   +informNavLink("static-page.html","Акции",'inform-nav__tablet-hide')
-                   +informNavLink("static-page.html","Оптовикам",'inform-nav__tablet-hide')
-                   +informNavLink("static-page.html","Новости",'inform-nav__tablet-hide')
-                   +informNavLink("static-page.html","Гарантии",'inform-nav__tablet-hide')
-                   +informNavLink("static-page.html","Контакты")
+                   +informNavLink("about-us.html","О компании")
+                   +informNavLink("delivery.html","Доставка и оплата")
+                   +informNavLink("stocks.html","Акции",'inform-nav__tablet-hide')
+                   +informNavLink("opt.html","Оптовикам",'inform-nav__tablet-hide')
+                   +informNavLink("news.html","Новости",'inform-nav__tablet-hide')
+                   +informNavLink("guarantee.html","Гарантии",'inform-nav__tablet-hide')
+                   +informNavLink("contacts.html","Контакты")
                    .li.inform-nav__tablet-toggle
                         +icon('dots','inform-nav__tablet-icon')
                         .inform-subnav
                             .inform-subnav__arrow
                             ul.inform-subnav__list
-                                each item in ['Акции','Оптовикам','Новости','Гарантии']
                                     li.inform-subnav__item
-                                        a(href="").inform-subnav__link=item
+                                        a(href="stocks.html").inform-subnav__link Акции
+                                    li.inform-subnav__item
+                                        a(href="opt.html").inform-subnav__link Оптовикам
+                                    li.inform-subnav__item
+                                        a(href="news.html").inform-subnav__link Новости
+                                    li.inform-subnav__item
+                                        a(href="guarantee.html").inform-subnav__link Гарантии
             nav.header__nav.header__nav-right.inform-nav
                 ul.inform-nav__list
-                    +informNavLink("#popup-signin","Регистрация")
-                    +informNavLink("#popup-login","Вход")
+                    li.inform-nav__item
+                        a(href="#popup-signin").js-popup-link.inform-nav__link Регистрация
+                    li(class=mod).inform-nav__item
+                        a(href="#popup-login").js-popup-link.inform-nav__link Вход

@@ -1,6 +1,7 @@
 @import "content";
 @import "pagination";
 @import "select";
+@import "news";
 
 .logo {
     &__img {
@@ -82,6 +83,13 @@
 }
 .text {
     line-height: 1.79;
+    a {
+        color: $main-shaft;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 .sandwich {
     cursor: pointer;

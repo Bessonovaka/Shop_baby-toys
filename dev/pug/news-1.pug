@@ -1,0 +1,43 @@
+extends layout/main
+
+block variables
+    -var title = 'Беговелогонка 1+ Puky'
+    -var pageClass = 'news-page'
+
+block content
+    .breadcrumbs
+        .container
+            ul.breadcrumbs__list
+                li.breadcrumbs__item
+                    a(href="index.html").breadcrumbs__link Главная
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Новости
+                li.breadcrumbs__item
+                    span.breadcrumbs__current Беговелогонка 1+ Puky
+    section.s-static-page
+        .container
+            h1.title-page Беговелогонка 1+ Puky
+            .news__img(style='background-image: url(static/images/content/news/news-1.jpg)' alt="Беговелогонка 1+ Puky")
+            p.news__title Беговелогонка 1+ Puky
+            p.news__subtitle «PUKYMOTO CUP» 07.04.2019
+            .news__body
+                p.text «Мини Гран При» и «Puky Russia» приглашают маленьких спортсменов от 1 до 3 лет на бесплатную беговелогонку «PUKYMOTO CUP», которая состоится 07 апреля 2019 года в Гостином Дворе на выставке-фестивале «Спорт и активный отдых»!
+                p.text «PUKYMOTO CUP» пройдет в классах:
+                p.text 1) «PUKYMOTO CUP 1+» (возраст: 1-2, беговелы Pukymoto предоставляются организатором)
+                p.text 2) «PUKYMOTO CUP» (2,6-3 на своих беговелах)
+                br
+                p.text Для направления заявки на участие в мероприятии Вам необходимо совершить следующие шаги:
+                p.text 1. Ознакомиться с информацией о мероприятии ниже.
+                p.text 2. Заполнить данную анкету участника.
+                p.text 3. Сделать репост анонса мероприятия со страницы организатора в одной из трех социальных сетей: ВКонтакте, Фейсбук или Инстаграм;
+                p.text 4. Подтвердить согласие с условиями организаторов и нажать кнопку «Отправить» внизу страницы.
+                br
+                p.text В случае успешной регистрации на мероприятие Вам придет подтверждение с почтового ящика info@minigp.com. Для того, чтобы наше сообщение не попало в спам, рекомендуем добавить этот адрес электронной почты в свою адресную книгу.
+                br
+                p.text По всем вопросам пишите на <a href="mailto:info@minigp.com">info@minigp.com</a>
+            .news__info
+                p.news__text Год новости: 2019
+                p.news__text Дата новости: 25.03.2019
+                p.news__text День новости: 25
+                p.news__text Месяц новости: марта
+            a(href="news.html").link Возврат к списку
